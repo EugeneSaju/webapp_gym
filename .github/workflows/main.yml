@@ -1,0 +1,17 @@
+name: "Gymapp Data"
+on: 
+  push:
+    branches:
+      - dev
+      
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Trigger deployment on another repo"
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: EugeneSaju/project_webapp.git
+          event-type: run
