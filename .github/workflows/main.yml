@@ -1,18 +1,19 @@
 name: Trigger Deployment on Another Repo
 
 on:
-  push:
-    branches:
-      - dev
-
+  workflow_dispatch:
+   
 jobs:
   trigger_deployment:
     runs-on: ubuntu-latest
 
     steps:
       - name: Trigger deployment
-        uses: peter-evans/repository-dispatch@v2
+        uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: EugeneSaju/webapp_gym.git
-          event-type: run
+          owner: EugeneSaju
+          repo: webapp_gym
+          github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          workflow_file_name: main.yml
+          ref: main
+
