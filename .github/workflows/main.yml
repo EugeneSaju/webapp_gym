@@ -1,7 +1,10 @@
 name: Trigger Deployment on Another Repo
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - dev
+    
    
 jobs:
   trigger_deployment:
