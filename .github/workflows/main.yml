@@ -18,5 +18,5 @@ jobs:
           repo: webapp_gym
           github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
           workflow_file_name: main.yml
-          ref: main
+          ref: dev
 
