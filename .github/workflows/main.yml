@@ -1,7 +1,9 @@
 name: Trigger Repo 2 Action
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - dev
 
 jobs:
   trigger_repo_2_action:
