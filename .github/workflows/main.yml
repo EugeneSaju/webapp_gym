@@ -1,4 +1,4 @@
-name: Trigger Repo 2 Action
+name: Trigger's Repo 2 Action
 
 on:
   push:
@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: EugeneSaju/project_webapp.git
+          repository: EugeneSaju/project_webapp
           event-type: trigger-workflow
