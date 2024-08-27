@@ -9,9 +9,10 @@ jobs:
   trigger_repo_2_action:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Dispatch Event to Repo B
-        uses: peter-evans/repository-dispatch@v2
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: EugeneSaju/project_webapp
-          event-type: trigger-workflow
+          event-type: triggered
+
